@@ -12,10 +12,10 @@ public class Producto
     private String marca;
     private double precio;
     private String presentacion;
-    private Categoria categoria;
+    private String categoria;
     
     public Producto(){}
-    public Producto(int id,String nombre,String marca,double precio,String presentacion, Categoria categoria)
+    public Producto(int id,String nombre,String marca,double precio,String presentacion,String categoria)
     {
         this.id = id;
         this.nombre = nombre;
@@ -45,7 +45,7 @@ public class Producto
         return presentacion;
     }
 
-    public Categoria getCategoria() {
+    public String getCategoria() {
         return categoria;
     }
 
@@ -69,7 +69,7 @@ public class Producto
         this.presentacion = presentacion;
     }
 
-    public void setCategoria(Categoria categoria) {
+    public void setCategoria(String categoria) {
         this.categoria = categoria;
     }
     
