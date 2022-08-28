@@ -10,15 +10,5 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class controladorPrincipal 
 {
-    @GetMapping("/")
-    public String cargarIndex()
-    {
-        return "index";
-    }
-    
-    @GetMapping("/categorias")
-    public String cargarCategorias()
-    {
-        return "categorias";
-    }
+   
 }
