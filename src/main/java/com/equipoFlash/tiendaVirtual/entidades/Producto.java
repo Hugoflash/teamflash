@@ -1,6 +1,11 @@
 
 package com.equipoFlash.tiendaVirtual.entidades;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 /**
  *
  * @author anderson
@@ -12,10 +17,10 @@ public class Producto
     private String marca;
     private double precio;
     private String presentacion;
-    private String categoria;
+    private Categoria categoria;
     
     public Producto(){}
-    public Producto(int id,String nombre,String marca,double precio,String presentacion,String categoria)
+    public Producto(int id,String nombre,String marca,double precio,String presentacion,Categoria categoria)
     {
         this.id = id;
         this.nombre = nombre;
@@ -45,7 +50,7 @@ public class Producto
         return presentacion;
     }
 
-    public String getCategoria() {
+    public Categoria getCategoria() {
         return categoria;
     }
 
@@ -69,7 +74,7 @@ public class Producto
         this.presentacion = presentacion;
     }
 
-    public void setCategoria(String categoria) {
+    public void setCategoria(Categoria categoria) {
         this.categoria = categoria;
     }
     

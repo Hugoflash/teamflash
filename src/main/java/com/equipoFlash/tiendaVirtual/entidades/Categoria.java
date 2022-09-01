@@ -1,15 +1,31 @@
 
 package com.equipoFlash.tiendaVirtual.entidades;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+
+@Entity(name="tcategorias")
 public class Categoria 
 {
+    @Id
+    @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+    
+    @Column(name = "nombre", length = 45, nullable = false, unique = true)
     private String nombre;
     
     public Categoria(){}
     public Categoria(int id, String nombre)
     {
         this.id = id;
+        this.nombre = nombre;
+    }
+    public Categoria(String nombre)
+    {
         this.nombre = nombre;
     }
 
