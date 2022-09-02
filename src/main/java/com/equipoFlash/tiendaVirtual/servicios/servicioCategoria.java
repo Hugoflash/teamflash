@@ -13,15 +13,16 @@ public class servicioCategoria
     @Autowired // inyeccion de la interfaz interCategoriaRepositorio
     private interCategoriaRepositorio repo;
     
-    public Categoria crearCategoria(Categoria newCategoria)
+    public Categoria crearCategoria(Categoria Categoria)
     {
-        Categoria guardado = repo.save(newCategoria);
+        Categoria guardado = repo.save(Categoria);
         return guardado;
     }
     
-    public void actualizarCategoria()
+    public Categoria actualizarCategoria(Categoria categoria )
     {
-        
+        Categoria actualizado = repo.save(categoria);
+        return actualizado;
     }
     public Categoria consultarCategoria(int id)
     {
@@ -35,8 +36,8 @@ public class servicioCategoria
         return lista;
     }
     
-    public void eliminarCategoria()
+    public void eliminarCategoria(Categoria categoria)
     {
-        
+        repo.delete(categoria);
     }
 }
