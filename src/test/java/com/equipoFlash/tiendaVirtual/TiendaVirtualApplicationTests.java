@@ -15,7 +15,7 @@ class TiendaVirtualApplicationTests
         private servicioCategoria servicio;
     
 	@Test
-	void testGuardarCategoria() 
+	void testInhabilitarrCategoria() 
         {
             //Categoria categoria = new Categoria(1,"Aseo personal",true);
             Categoria guardado = servicio.inhabilitarCategoria(1, false);
