@@ -11,7 +11,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 @SpringBootTest
 class TiendaVirtualApplicationTests 
 {
-        @Autowired
+        @Autowired  //inyeccion de la clase servicioCategoria
         private servicioCategoria servicio;
     
 	@Test
