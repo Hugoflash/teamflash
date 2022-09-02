@@ -17,9 +17,9 @@ class TiendaVirtualApplicationTests
 	@Test
 	void testGuardarCategoria() 
         {
-            Categoria categoria = new Categoria(1,"Aseo personal",true);
-            Categoria guardado = servicio.actualizarCategoria(categoria);
-            Assertions.assertTrue(guardado.getId() > 0, "¡¡Error al guardar nueva categoria!!");
+            //Categoria categoria = new Categoria(1,"Aseo personal",true);
+            Categoria guardado = servicio.inhabilitarCategoria(1, false);
+            Assertions.assertTrue(guardado.getHabilitado() == false, "¡¡Error al inhabilitar categoria!!");
 	}
 
 }

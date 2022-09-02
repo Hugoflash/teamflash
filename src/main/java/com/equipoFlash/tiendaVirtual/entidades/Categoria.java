@@ -33,7 +33,7 @@ public class Categoria
         this.nombre = nombre;
         this.habilitado = habilitado;
     }
-
+   
     public int getId() {
         return id;
     }
