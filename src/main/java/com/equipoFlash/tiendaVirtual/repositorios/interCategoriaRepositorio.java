@@ -11,5 +11,5 @@ import java.util.List;
  */
 public interface interCategoriaRepositorio extends JpaRepository<Categoria,Integer>
 {
-    public List<Categoria> findByNombreContainig(String criterio);
+    public List<Categoria> findByNombreContaining(String criterio);
 }

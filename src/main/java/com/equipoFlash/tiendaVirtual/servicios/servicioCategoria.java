@@ -32,7 +32,7 @@ public class servicioCategoria
     
     public List<Categoria> consultarCategorias(String criterio)
     {
-        List<Categoria> lista = repo.findByNombreContainig(criterio);
+        List<Categoria> lista = repo.findByNombreContaining(criterio);
         return lista;
     }
     
