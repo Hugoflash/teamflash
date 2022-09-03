@@ -18,8 +18,17 @@ class TiendaVirtualApplicationTests
 	void testInhabilitarrCategoria() 
         {
             //Categoria categoria = new Categoria(1,"Aseo personal",true);
-            Categoria guardado = servicio.inhabilitarCategoria(1, false);
-            Assertions.assertTrue(guardado.isHabilitado() == false, "¡¡Error al inhabilitar categoria!!");
+            Categoria guardado = servicio.inhabilitarCategoria(1,true);
+            Assertions.assertTrue(guardado.isHabilitado() == true, "¡¡Error al inhabilitar categoria!!");
 	}
+        
+        @Test
+        void testGuardar()
+        {
+            Categoria categoria = new Categoria("Articulos deportivos",true);
+            Categoria guardado = servicio.guardarCategoria(categoria);
+            Assertions.assertTrue(guardado.getId() > 0, "¡¡Error al inhabilitar categoria!!");
+            
+        }
 
 }
