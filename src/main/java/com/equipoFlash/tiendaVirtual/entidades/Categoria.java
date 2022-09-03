@@ -42,7 +42,7 @@ public class Categoria
         return nombre;
     }
 
-    public boolean getHabilitado() {
+    public boolean isHabilitado() {
         return habilitado;
     }
 

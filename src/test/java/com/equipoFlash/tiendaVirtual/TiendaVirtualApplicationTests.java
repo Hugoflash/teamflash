@@ -19,7 +19,7 @@ class TiendaVirtualApplicationTests
         {
             //Categoria categoria = new Categoria(1,"Aseo personal",true);
             Categoria guardado = servicio.inhabilitarCategoria(1, false);
-            Assertions.assertTrue(guardado.getHabilitado() == false, "¡¡Error al inhabilitar categoria!!");
+            Assertions.assertTrue(guardado.isHabilitado() == false, "¡¡Error al inhabilitar categoria!!");
 	}
 
 }

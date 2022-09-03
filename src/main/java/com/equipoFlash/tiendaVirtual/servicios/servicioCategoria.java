@@ -37,6 +37,12 @@ public class servicioCategoria
         return lista;
     }
     
+    public List<Categoria> consultarCategoriasHabilitadas()
+    {
+        List<Categoria> lista = repo.findByHabilitadoTrue();
+        return lista;
+    }
+    
     public Categoria inhabilitarCategoria(int id,boolean habilitado) // inhabilitar categoria, por id y estado.
     {
         Categoria categoria = repo.findById(id).get();
