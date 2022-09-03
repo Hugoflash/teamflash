@@ -778,13 +778,28 @@
 													"top": 361,
 													"width": 143,
 													"height": 13
+												},
+												{
+													"_type": "ERDColumnView",
+													"_id": "AAAAAAGDAb2OoD+f23w=",
+													"_parent": {
+														"$ref": "AAAAAAGDAXfpKj7Optk="
+													},
+													"model": {
+														"$ref": "AAAAAAGDAb2OlD+cGjc="
+													},
+													"font": "Arial;13;0",
+													"left": 357,
+													"top": 376,
+													"width": 143,
+													"height": 13
 												}
 											],
 											"font": "Arial;13;0",
 											"left": 352,
 											"top": 311,
 											"width": 153,
-											"height": 68
+											"height": 83
 										}
 									],
 									"font": "Arial;13;0",
@@ -1496,6 +1511,16 @@
 									},
 									"name": "celular",
 									"type": "int",
+									"length": 0
+								},
+								{
+									"_type": "ERDColumn",
+									"_id": "AAAAAAGDAb2OlD+cGjc=",
+									"_parent": {
+										"$ref": "AAAAAAGDAXfpKT7K4D4="
+									},
+									"name": "email",
+									"type": "String",
 									"length": 0
 								}
 							]
