@@ -17,17 +17,30 @@ public class Producto
     private String marca;
     private double precio;
     private String presentacion;
+    private int existencia;
     private Categoria categoria;
     
     public Producto(){}
-    public Producto(int id,String nombre,String marca,double precio,String presentacion,Categoria categoria)
+    public Producto(int id,String nombre,String marca,double precio,String presentacion,int existencia,Categoria categoria)
     {
         this.id = id;
         this.nombre = nombre;
         this.marca = marca;
         this.precio = precio;
         this.presentacion = presentacion;
+        this.existencia = existencia;
         this.categoria = categoria;
+    }
+    
+    public Producto(String nombre,String marca,double precio,String presentacion,int existencia,Categoria categoria)
+    {
+        this.nombre = nombre;
+        this.marca = marca;
+        this.precio = precio;
+        this.presentacion = presentacion;
+        this.existencia = existencia;
+        this.categoria = categoria;
+        
     }
 
     public int getId() {
@@ -54,6 +67,10 @@ public class Producto
         return categoria;
     }
 
+    public int getExistencia() {
+        return existencia;
+    }
+    
     public void setId(int id) {
         this.id = id;
     }
@@ -74,6 +91,10 @@ public class Producto
         this.presentacion = presentacion;
     }
 
+    public void setExistencia(int existencia) {
+        this.existencia = existencia;
+    }
+    
     public void setCategoria(Categoria categoria) {
         this.categoria = categoria;
     }
