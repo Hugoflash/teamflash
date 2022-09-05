@@ -707,7 +707,7 @@
 											"top": 293,
 											"width": 153,
 											"height": 13,
-											"text": "tcliente"
+											"text": "tclientes"
 										},
 										{
 											"_type": "ERDColumnCompartmentView",
@@ -1412,7 +1412,7 @@
 							"_parent": {
 								"$ref": "AAAAAAGDAWl83T1eIeI="
 							},
-							"name": "tcliente",
+							"name": "tclientes",
 							"ownedElements": [
 								{
 									"_type": "ERDRelationship",
@@ -1524,6 +1524,14 @@
 									"length": 0
 								}
 							]
+						},
+						{
+							"_type": "ERDEntity",
+							"_id": "AAAAAAGDBTWBcBu1fek=",
+							"_parent": {
+								"$ref": "AAAAAAGDAWl83T1eIeI="
+							},
+							"name": "tinventario"
 						}
 					]
 				}

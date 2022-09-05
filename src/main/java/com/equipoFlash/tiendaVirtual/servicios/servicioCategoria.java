@@ -13,9 +13,9 @@ public class servicioCategoria
     @Autowired // inyeccion de la interfaz interCategoriaRepositorio
     private interCategoriaRepositorio repo;
     
-    public Categoria guardarCategoria(Categoria Categoria) // funciona tanto para crear y actualizar, para actualizar el objeto debe contener el "id" de la fila a actualizar.
+    public Categoria guardarCategoria(Categoria categoria) // funciona tanto para crear y actualizar, para actualizar el objeto debe contener el "id" de la fila a actualizar.
     {
-        Categoria guardado = repo.save(Categoria);
+        Categoria guardado = repo.save(categoria);
         return guardado;
     }
     
