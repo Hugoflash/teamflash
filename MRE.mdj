@@ -432,7 +432,7 @@
 											"top": 93,
 											"width": 146.2763671875,
 											"height": 13,
-											"text": "tdetalle"
+											"text": "tdetalles"
 										},
 										{
 											"_type": "ERDColumnCompartmentView",
@@ -1213,7 +1213,7 @@
 									"_parent": {
 										"$ref": "AAAAAAGDAWyTJz2iFEU="
 									},
-									"name": "precio",
+									"name": "presentacion",
 									"type": "int",
 									"length": 0
 								},
@@ -1233,8 +1233,8 @@
 									"_parent": {
 										"$ref": "AAAAAAGDAWyTJz2iFEU="
 									},
-									"name": "presentacion",
-									"type": "String",
+									"name": "existencia",
+									"type": "int",
 									"length": 0
 								},
 								{
@@ -1243,7 +1243,7 @@
 									"_parent": {
 										"$ref": "AAAAAAGDAWyTJz2iFEU="
 									},
-									"name": "existencia",
+									"name": "precio",
 									"type": "int",
 									"length": 0
 								},
@@ -1368,7 +1368,7 @@
 							"_parent": {
 								"$ref": "AAAAAAGDAWl83T1eIeI="
 							},
-							"name": "tdetalle",
+							"name": "tdetalles",
 							"columns": [
 								{
 									"_type": "ERDColumn",
