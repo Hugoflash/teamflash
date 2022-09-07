@@ -22,7 +22,7 @@ public class controladorPrincipal
        return "categorias";
    }
    
-   @GetMapping("/categorias/form")
+   @GetMapping("/categorias/formulario")
    public String cargarFormularioCategorias()
    {
        return "formularioCategorias";
