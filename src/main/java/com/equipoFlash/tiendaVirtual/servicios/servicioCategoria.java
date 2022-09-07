@@ -27,7 +27,7 @@ public class servicioCategoria
     
     public Categoria consultarCategoria(int id) // consultar por el id
     {
-        Categoria categoria = repo.findById(id).get();
+        Categoria categoria = repo.findById(id).orElse(null); // si no encuentra la categoria devuelve null.
         return categoria;
     }
     
@@ -45,7 +45,7 @@ public class servicioCategoria
     
     public Categoria inhabilitarCategoria(int id,boolean habilitado) // inhabilitar categoria, por id y estado.
     {
-        Categoria categoria = repo.findById(id).get();
+        Categoria categoria = repo.findById(id).get(); // findById(id).get() devuelve un objeto de categoria
         categoria.setHabilitado(habilitado);
         Categoria result = repo.save(categoria);
         return result;
