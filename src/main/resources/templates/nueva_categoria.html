@@ -20,10 +20,10 @@
                                 <a class="nav-link" aria-current="page" href="/">Inicio</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link active" href="/categorias">Categorías</a>
+                                <a class="nav-link" href="/categorias">Categorías</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="/categoria/crearcategoria">Nueva categoría</a>
+                                <a class="nav-link active" href="/categoria/crearcategoria">Nueva categoría</a>
                             </li>
                         </ul>
                     </div>
@@ -32,33 +32,7 @@
         </header>
 
         <div class="container">
-            <div>
-                <h5>Tabla de categorias</h5>
-                <form action="/categorias" method="get">
-                    <label for="buscarCategoria">Buscar por:</label>
-                    <input type="text" id="buscarCategoria" name="criterio" th:value = "${criterio}">
-                    <input type="submit" value="Buscar"><br>
-                </form>
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th scope="col">ID</th>
-                            <th scope="col">Nombre</th>
-                            <th scope="col">Habilitado</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr th:if = "${not #lists.isEmpty(categorias)}" th:each = "categoria : ${categorias}">
-                            <th scope="row" th:text="${categoria.id}">...</th>
-                            <td th:text="${categoria.nombre}">...</td>
-                            <td th:text="${categoria.habilitado}">...</td>    
-                        </tr>
-                        <tr th:if = "${#lists.isEmpty(categorias)}">
-                            <td colspan = "3">No se encontraron registros</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+            
 
 
         </div>

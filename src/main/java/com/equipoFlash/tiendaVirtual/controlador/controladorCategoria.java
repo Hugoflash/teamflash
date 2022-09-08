@@ -36,9 +36,16 @@ public class controladorCategoria
        else
        {
            model.addAttribute("categorias",servicio.consultarCategorias(criterio));
+           model.addAttribute("criterio",criterio);
        }
        
        return "categorias";
+   }
+   
+   @GetMapping("/categoria/crearcategoria")
+   public String crearNuevaCategoria()
+   {
+       return "nueva_categoria";
    }
    
 }
