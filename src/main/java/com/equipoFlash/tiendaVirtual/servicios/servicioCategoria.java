@@ -45,7 +45,7 @@ public class servicioCategoria
     
     public Categoria inhabilitarCategoria(int id,boolean habilitado) // inhabilitar categoria, por id y estado.
     {
-        Categoria categoria = repo.findById(id).get(); // findById(id).get() devuelve un objeto de categoria
+        Categoria categoria = repo.findById(id).orElse(null); // findById(id).get() devuelve un objeto de categoria
         categoria.setHabilitado(habilitado);
         Categoria result = repo.save(categoria);
         return result;
