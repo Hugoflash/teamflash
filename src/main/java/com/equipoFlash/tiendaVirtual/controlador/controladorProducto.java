@@ -20,8 +20,24 @@ public class controladorProducto
     private servicioProducto servicio;
     
    @GetMapping("/productos")
-   public String cargarProductos()
+   public String cargarProductos(Model modelo, @RequestParam(value = "criterio",required = false) String criterio)
    {
+       if (criterio == null)
+       {
+           modelo.addAttribute("productos", servicio.consultarProductos());
+       }
+       else
+       {
+           modelo.addAttribute("productos", servicio.consultarProductosByCriterio(criterio));
+           modelo.addAttribute("criterio", criterio);
+       }
+       
        return "productos";
+   }
+   
+   @GetMapping("/productos/nuevoproducto")
+   public String cargarNuevoProducto()
+   {
+       return "nuevo_producto";
    }
 }
