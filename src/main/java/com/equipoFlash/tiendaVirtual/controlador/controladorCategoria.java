@@ -19,13 +19,7 @@ public class controladorCategoria
 {
     @Autowired
     private servicioCategoria servicio;
-    
-    @GetMapping("/")
-   public String cargarIndex()
-   {
-       return "index";
-   }
-   
+      
    @GetMapping("/categorias")
    public String cargarCategorias(Model model, @RequestParam(value ="criterio", required = false) String criterio)
    {
