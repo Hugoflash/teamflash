@@ -28,7 +28,7 @@ CREATE TABLE `tcategorias` (
   `habilitado` tinyint NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `nombre_UNIQUE` (`nombre`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -37,7 +37,7 @@ CREATE TABLE `tcategorias` (
 
 LOCK TABLES `tcategorias` WRITE;
 /*!40000 ALTER TABLE `tcategorias` DISABLE KEYS */;
-INSERT INTO `tcategorias` VALUES (1,'Aseo personal',1),(2,'Articulos deportivos',1);
+INSERT INTO `tcategorias` VALUES (1,'Aseo personal',1),(2,'Articulos deportivos',1),(3,'Enlatados',0);
 /*!40000 ALTER TABLE `tcategorias` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -137,15 +137,15 @@ DROP TABLE IF EXISTS `tproductos`;
 CREATE TABLE `tproductos` (
   `id` int NOT NULL AUTO_INCREMENT,
   `nombre` varchar(45) NOT NULL,
-  `presentacion` varchar(45) NOT NULL,
   `marca` varchar(45) NOT NULL,
-  `existencia` int NOT NULL,
   `precio` int NOT NULL,
+  `presentacion` varchar(45) NOT NULL,
+  `existencia` int NOT NULL,
   `id_categoria` int NOT NULL,
   PRIMARY KEY (`id`),
-  KEY `FK_categoriaProductos_idx` (`id_categoria`),
-  CONSTRAINT `FK_productosCategorias` FOREIGN KEY (`id_categoria`) REFERENCES `tcategorias` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  KEY `FK_productosCategoria_idx` (`id_categoria`),
+  CONSTRAINT `FK_productosCategoria` FOREIGN KEY (`id_categoria`) REFERENCES `tcategorias` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -154,6 +154,7 @@ CREATE TABLE `tproductos` (
 
 LOCK TABLES `tproductos` WRITE;
 /*!40000 ALTER TABLE `tproductos` DISABLE KEYS */;
+INSERT INTO `tproductos` VALUES (1,'Desodorante SpeedStick men','SpeedStick',1000,'sobre',150,1),(2,'Desodorante LadySpeedStick','SpeedStick',900,'sobre',120,1),(3,'Protectores Nosotras','Nosotras',300,'sobre',180,1);
 /*!40000 ALTER TABLE `tproductos` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -166,4 +167,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-09-08 12:09:50
+-- Dump completed on 2022-09-08 17:21:21
