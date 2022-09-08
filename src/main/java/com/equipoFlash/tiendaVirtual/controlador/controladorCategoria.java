@@ -6,12 +6,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
 /**
- *
+ * index.html           /
+ * categorias.html      /categorias
+ * 
  * @author anderson
  */
 @Controller
-public class controladorPrincipal 
+public class controladorCategoria 
 {
     @Autowired
     private servicioCategoria servicio;
@@ -23,9 +27,16 @@ public class controladorPrincipal
    }
    
    @GetMapping("/categorias")
-   public String cargarCategorias(Model model)
+   public String cargarCategorias(Model model, @RequestParam(value ="criterio", required = false) String criterio)
    {
-       model.addAttribute("categorias",servicio.consultarCategoria());
+       if (criterio == null)
+       {
+           model.addAttribute("categorias",servicio.consultarCategoria());
+       }
+       else
+       {
+           model.addAttribute("categorias",servicio.consultarCategorias(criterio));
+       }
        
        return "categorias";
    }
