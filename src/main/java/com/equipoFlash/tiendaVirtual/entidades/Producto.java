@@ -6,22 +6,38 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
+
 /**
  *
  * @author anderson
  */
 public class Producto 
 {
+    @Id
+    @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+    
+    @Column(name = "nombre", length = 45, nullable = false, unique = false)
     private String nombre;
+    
+    @Column(name = "marca", length = 45, nullable = false, unique = false)
     private String marca;
-    private double precio;
+    
+    @Column(name = "precio", nullable = false, unique = false)
+    private int precio;
+    
+    @Column(name = "presentacion", length = 45, nullable = false, unique = false)
     private String presentacion;
+    
+    @Column(name = "existencia", nullable = false, unique = false)
     private int existencia;
+    
+    @Column(name = "id_categoria", nullable = false)
     private Categoria categoria;
     
     public Producto(){}
-    public Producto(int id,String nombre,String marca,double precio,String presentacion,int existencia,Categoria categoria)
+    public Producto(int id,String nombre,String marca,int precio,String presentacion,int existencia,Categoria categoria)
     {
         this.id = id;
         this.nombre = nombre;
@@ -32,7 +48,7 @@ public class Producto
         this.categoria = categoria;
     }
     
-    public Producto(String nombre,String marca,double precio,String presentacion,int existencia,Categoria categoria)
+    public Producto(String nombre,String marca,int precio,String presentacion,int existencia,Categoria categoria)
     {
         this.nombre = nombre;
         this.marca = marca;
@@ -83,7 +99,7 @@ public class Producto
         this.marca = marca;
     }
 
-    public void setPrecio(double precio) {
+    public void setPrecio(int precio) {
         this.precio = precio;
     }
 
