@@ -25,13 +25,13 @@ public class servicioCategoria
         return lista;
     }
     
-    public Categoria consultarCategoria(int id) // consultar por el id
+    public Categoria consultarCategoriaById(int id) // consultar por el id
     {
         Categoria categoria = repo.findById(id).orElse(null); // si no encuentra la categoria devuelve null.
         return categoria;
     }
     
-    public List<Categoria> consultarCategorias(String criterio)  // consultar segun el nombre y lo retorna en una lista.
+    public List<Categoria> consultarCategoriasByCriterio(String criterio)  // consultar segun el nombre y lo retorna en una lista.
     {
         List<Categoria> lista = repo.findByNombreContaining(criterio);
         return lista;

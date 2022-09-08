@@ -10,7 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class TiendaVirtualApplicationTests 
+class pruebasCategoria 
 {
         @Autowired  //inyeccion de la clase servicioCategoria
         private servicioCategoria servicio;
@@ -20,7 +20,7 @@ class TiendaVirtualApplicationTests
 	void testInhabilitarrCategoria() 
         {
             Assertions.assertDoesNotThrow(()->{
-                servicio.inhabilitarCategoria(1, true);
+                servicio.inhabilitarCategoria(3, false);
             }, "No se pudo inhabilitar la categoria");
 	}
         
@@ -28,7 +28,7 @@ class TiendaVirtualApplicationTests
         @Disabled
         void testGuardar()
         {
-            Categoria categoria = new Categoria("Articulos deportivos",true);
+            Categoria categoria = new Categoria("Enlatados",true);
             Assertions.assertDoesNotThrow(()->{servicio.guardarCategoria(categoria);
             },"No se pudo guardar la categoria");
             

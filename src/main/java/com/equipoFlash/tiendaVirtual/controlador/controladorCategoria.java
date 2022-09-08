@@ -35,7 +35,7 @@ public class controladorCategoria
        }
        else
        {
-           model.addAttribute("categorias",servicio.consultarCategorias(criterio));
+           model.addAttribute("categorias",servicio.consultarCategoriasByCriterio(criterio));
            model.addAttribute("criterio",criterio);
        }
        

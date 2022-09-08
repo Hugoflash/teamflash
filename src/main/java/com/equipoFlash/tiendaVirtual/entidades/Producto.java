@@ -11,6 +11,7 @@ import javax.persistence.GenerationType;
  *
  * @author anderson
  */
+@Entity (name = "tproductos")
 public class Producto 
 {
     @Id
@@ -18,26 +19,26 @@ public class Producto
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     
-    @Column(name = "nombre", length = 45, nullable = false, unique = false)
+    @Column(name = "nombre", length = 45, nullable = false)
     private String nombre;
     
-    @Column(name = "marca", length = 45, nullable = false, unique = false)
+    @Column(name = "marca", length = 45, nullable = false)
     private String marca;
     
-    @Column(name = "precio", nullable = false, unique = false)
+    @Column(name = "precio", nullable = false)
     private int precio;
     
-    @Column(name = "presentacion", length = 45, nullable = false, unique = false)
+    @Column(name = "presentacion", length = 45, nullable = false)
     private String presentacion;
     
-    @Column(name = "existencia", nullable = false, unique = false)
+    @Column(name = "existencia", nullable = false)
     private int existencia;
     
     @Column(name = "id_categoria", nullable = false)
-    private Categoria categoria;
+    private int categoria;
     
     public Producto(){}
-    public Producto(int id,String nombre,String marca,int precio,String presentacion,int existencia,Categoria categoria)
+    public Producto(int id,String nombre,String marca,int precio,String presentacion,int existencia,int categoria)
     {
         this.id = id;
         this.nombre = nombre;
@@ -48,7 +49,7 @@ public class Producto
         this.categoria = categoria;
     }
     
-    public Producto(String nombre,String marca,int precio,String presentacion,int existencia,Categoria categoria)
+    public Producto(String nombre,String marca,int precio,String presentacion,int existencia,int categoria)
     {
         this.nombre = nombre;
         this.marca = marca;
@@ -79,7 +80,7 @@ public class Producto
         return presentacion;
     }
 
-    public Categoria getCategoria() {
+    public int getCategoria() {
         return categoria;
     }
 
@@ -111,7 +112,7 @@ public class Producto
         this.existencia = existencia;
     }
     
-    public void setCategoria(Categoria categoria) {
+    public void setCategoria(int categoria) {
         this.categoria = categoria;
     }
     

@@ -5,12 +5,14 @@ import com.equipoFlash.tiendaVirtual.entidades.Producto;
 import com.equipoFlash.tiendaVirtual.repositorios.interProductoRepositorio;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 /**
  *
  * @author Pandar
  */
 
+@Service
 public class servicioProducto 
 {
     @Autowired
