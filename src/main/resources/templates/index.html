@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>EjemWebVentasOnline</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://getbootstrap.com/docs/5.2/assets/css/docs.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+        <link href="Style/EstiloPrincipal.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body class="p-3 m-0 border-0 bd-example">
+        <div class="Contenedor">     
+            <div class="cabecera">
+                <header>
+                    <nav class="navbar navbar-expand-lg bg-light navbar-collapse" >
+
+                        <div class="container-fluid" >
+                            <a class="navbar-brand" style="color:white;" href="#">Servicio Virtual de ventas</a>
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse" id="navbarScroll">
+                                <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+                                    <li class="nav-item">
+                                        <a class="nav-link active"  style="color:white;" aria-current="page" href="#">Nosotros</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link " style="color:white;" href="#">Contactenos</a>
+                                    </li>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle " style="color:white;"  href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            servicios
+                                        </a>
+                                        <ul class="dropdown-menu" style="color:white;" >
+                                            <li><a class="dropdown-item" href="#">Pedidos</a></li>
+                                            <li><a class="dropdown-item" href="#">Medios de Pagos</a></li>
+                                            <li><hr class="dropdown-divider"></li>
+                                            <li><a class="dropdown-item" href="#">Trazabilidad del pedido</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link disabled" style="color:white;">Registrarse</a>
+                                    </li>
+                                </ul> 
+                                <form class="d-flex" role="search">
+                                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                                    <button class="btn btn-danger" type="submit">Search</button>
+                                </form>
+                            </div>
+                        </div>
+                    </nav>
+                    <figure>
+                        <img src="Images/banners.png"/>      
+                    </figure>
+                </header>  
+            </div>
+
+            <div class=" galeria">
+                <div class=" galeria_lienzo">
+
+                    <input type="radio" name="nav" class="elemento1" id="A"/>
+                    <input type="radio" name="nav" class="elemento2" id="B"/>
+                    <input type="radio" name="nav" class="elemento3" id="C"/>
+
+                    <div class="galeria_contenedor">
+
+                        <figure>
+                            <img src="Images/carrucel1.png" alt="" width="600px"/>
+
+                        </figure>
+
+                        <figure>
+                            <img src="Images/carrucel2.png" alt="" width="600px"/>
+
+                        </figure>
+
+                        <figure>
+                            <img src="Images/carrucel3.png" alt="" width="600px"/>
+
+                        </figure>
+                    </div>          
+                </div> 
+            </div>
+
+            <div class="controles">
+                <label for="A"></label>
+                <label for="B"></label>
+                <label for="C"></label>
+            </div> 
+
+            <section class="tienda">
+
+                <article  class="article-1" onclick=window.open('Registrarse_Cliente.html') >
+                    <figure><center> <img src="Images/registro.png" alt=""/> </center></figure>
+                    <p class="acceso">Registrarse aqui para acceder a realizar compras en Linea de manera facily segura.</p>
+                    <div><h5>Acceso Clientes</h5></div>  
+                </article>
+                <article  class="article-1" onclick=window.open('categorias.html')>
+                    <figure><center> <img src="Images/categorias.png" alt=""/> </center></figure>
+                    <p class="acceso"> Acceso al registro de nuevas categorias, actualizacion y consultas</p>
+                    <div><h5>Gestion Categorias</h5></div>  
+                </article>
+
+                <article class="article-1" onclick=window.open('productos.html')>
+                    <figure><center> <img src="Images/productos.png" alt=""/> </center></figure>
+                    <p class="acceso"> Acceso al registro de nuevos productos, actualizacion y consultas</p>
+                    <div><h5>Gestion Productos</h5></div> 
+                </article>
+
+                <article  class="article-2" >
+                    <figure><center> <img src="Images/huevos.png" alt=""/> </center></figure>
+                    <p class="Datos_producto"> Clase A, cubeta, Unidades 30, Precio $ 11.500</p>
+                    <input type="submit" class="btn btn-success" value="Añadir a mi Canasta">
+
+                </article>
+                <article  class="article-2" >
+                    <figure><center> <img src="Images/chocolate.png" alt=""/> </center></figure>
+                    <p class="Datos_producto"> Corona , Chocolate, Unidades 30, Precio $ 5.100</p>
+                    <input type="submit" class="btn btn-success" value="Añadir a mi Canasta">
+
+                </article>
+
+                <article class="article-2" >
+                    <figure><center> <img src="Images/arroz.png" alt=""/> </center></figure>
+                    <p class="Datos_producto"> Diana Arroz, Sal, Unidades 50, Precio $ 2.400</p>
+                    <input type="submit" class="btn btn-success" value="Añadir a mi Canasta">
+
+                </article>
+                <article  class="article-2" >
+                    <figure><center> <img src="Images/fab.png" alt=""/> </center></figure>
+                    <p class="Datos_producto"> Fab, Jabon, Unidades 60, Precio $ 9.200</p>
+                    <input type="submit" class="btn btn-success" value="Añadir a mi Canasta">
+
+                </article>
+                <article  class="article-2" >
+                    <figure><center> <img src="Images/aceite.png" alt=""/> </center></figure>
+                    <p class="Datos_producto"> Riquisimo, Aceite, Unidades 30, Precio $ 15.000</p>
+                    <input type="submit" class="btn btn-success" value="Añadir a mi Canasta">
+
+                </article>
+
+                <article class="article-2" >
+                    <figure><center> <img src="Images/sal.png" alt=""/> </center></figure>
+                    <p class="Datos_producto"> Alta Pureza, Sal, Unidades 30, Precio $ 3.000</p>
+                    <input type="submit" class="btn btn-success" value="Añadir a mi Canasta">
+                </article>
+
+                </article>
+
+            </section> 
+
+            <div class="espacio"> </div>
+            <div class="PiePagina">
+                <footer>
+                    <p class="NombreNegocio"> Poner Aqui el Nombre Negocio </p>
+                    <p class="Direccion"> Direccion: Poner direccion </p>
+                    <p> Telefono: Poner Numero Telefono </p>
+                    <p> Horario de Atencion: Poner los horarios de atencion </p>
+                    <p> Web: Poner direccion de la web </p>  
+                </footer> 
+
+            </div>
+        </div>
+
+    </body>
+</html>
+

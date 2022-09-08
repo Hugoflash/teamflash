@@ -1,0 +1,14 @@
+body{
+    
+    background: #DEDEE5;
+}
+
+.form_productos{
+  max-width: 50em;  
+  padding: 1.3em;
+  margin: 0 auto;
+  background-color: rgbas(120, 119, 123, 0.3);
+  font-weight: bold;
+  border-radius:0.5em;
+  box-shdow: inset 1px 1px 22px 4px;
+}
