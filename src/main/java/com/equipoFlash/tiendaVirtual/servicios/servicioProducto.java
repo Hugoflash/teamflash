@@ -41,4 +41,9 @@ public class servicioProducto
         List<Producto> lista = repo.findByNombreContaining(criterio);
         return lista;
     }
+    
+    public void eliminarProducto(Producto producto)
+    {
+        repo.delete(producto);
+    }
 }

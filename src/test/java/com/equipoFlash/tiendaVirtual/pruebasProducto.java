@@ -20,16 +20,16 @@ public class pruebasProducto
     private servicioProducto servicio;
   
     @Test
-            @Disabled
+    @Disabled   
     void testGuardarProducto() // Guarda o actualiza el producto, para guardar no se envia ID, para actualizar se debe enviar ID del producto a actualizar.
     {
-         Producto producto = new Producto("Protectores Nosotras","Nosotras",300,"sobre",180,1);
+         Producto producto = new Producto("Desodorante LadySpeedStick","SpeedStick",9000,"sobre",120,1);
          Assertions.assertDoesNotThrow(()->{servicio.guardarProducto(producto);
          },"Error!! No se pudo guardar la categoria");
     }
     
     @Test
-            @Disabled
+    @Disabled
     void testConsultarProductos() // consulta todos los productos de la tabla
     {
          Assertions.assertDoesNotThrow(()->{if (servicio.consultarProductos().size() > 0);
@@ -37,7 +37,7 @@ public class pruebasProducto
     }
     
     @Test
-            @Disabled
+    @Disabled
     void testConsutarProductosById()
     {
         Assertions.assertDoesNotThrow(()->{servicio.consultarProductosById(1);

@@ -43,6 +43,11 @@ public class servicioCategoria
         return lista;
     }
     
+    public void eliminarCategoria(Categoria categoria) // eliminar categoria recibiendo un objeto de la misma clase
+    {
+        repo.delete(categoria);
+    }
+    
     public Categoria inhabilitarCategoria(int id,boolean habilitado) // inhabilitar categoria, por id y estado.
     {
         Categoria categoria = repo.findById(id).orElse(null); // findById(id).get() devuelve un objeto de categoria
