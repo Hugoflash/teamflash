@@ -36,11 +36,11 @@ public class controladorCategoria
            model.addAttribute("categorias",servicio.consultarCategoriasByCriterio(criterio));
            model.addAttribute("criterio",criterio);
        }
-       
+    
        return "categorias";
    }
    
-   @GetMapping("/categoria/crearcategoria")
+   @GetMapping("/categoria/crearcategoria")  // ruta de acceso a la pagina nueva_categoria
    public String crearNuevaCategoria(Model modelo)
    {
        Categoria categoria = new Categoria();
@@ -72,6 +72,8 @@ public class controladorCategoria
        
        return "redirect:/categorias";
    }
+  
    
+  
    
 }

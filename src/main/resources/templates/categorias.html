@@ -56,7 +56,7 @@
                             <td th:text="${categoria.habilitado}">...</td>
                             <td>
                                 <a th:href = "${'/categoria/crearcategoria/' + categoria.id}">Editar</a>
-                                <a th:href = "${'/categoria/eliminar/' + categoria.id}">Eliminar</a>
+                                <a th:href = "${'/categoria/eliminar/' + categoria.id}" >Eliminar</a>
                             </td> 
                         </tr>
                         <tr th:if = "${#lists.isEmpty(categorias)}">
@@ -71,7 +71,7 @@
         </div>
 
         <!-- Modal confirmar eliminacion -->
-        <div class="modal fade" id="miModal" tabindex="-1" aria-hidden="true" aria-labelledby="modalTitle" data-bs-backdrop="static">
+        <div class="modal fade" id="modal-confir-eliminar" tabindex="-1" aria-hidden="true" aria-labelledby="modalTitle" data-bs-backdrop="static">
             <div class="modal-dialog modal-dialog-center modal-dialog-scrollable">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -82,8 +82,7 @@
                         <p>Va a eliminar la categoria, esta seguro?</p>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Aceptar</button>
+                        
                     </div>
                 </div>
             </div>

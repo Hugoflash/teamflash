@@ -32,18 +32,18 @@
         </header>
 
         <div class="container">
-            <form action="/categorias" method="post" th:object = "${categoria}">
+            <form action="/categorias" method="post" th:object="${categoria}">
                 <h5>Crear nueva categoria</h5>
                 <div>
-                    <input type = "hidden" id ="id" name ="id" th:field = "*{id}">
+                    <input type ="hidden" id="id" name="id" th:field="*{id}">
                 </div>
                 <div>
                     <label for = "nombre" >Nombre:</label>
-                    <input type="text" id="nombre" name="nombre" required ="" maxlength = "45" minlength = "5" th:field = "*{nombre}">
+                    <input type="text" id="nombre" name="nombre" required ="" maxlength="45" minlength="5" th:field="*{nombre}">
                 </div>
                 <div>
                     <label for="habilitado">Habilitado:</label>
-                    <input type="checkbox" id = "habilitado" name="habilitado" th:field = "*{habilitado}">
+                    <input type="checkbox" id="habilitado" name="habilitado" th:field="*{habilitado}">
                 </div> 
                 <br>
                     <input type="submit" value="Guardar">
