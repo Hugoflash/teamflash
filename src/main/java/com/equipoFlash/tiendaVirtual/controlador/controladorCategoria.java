@@ -49,7 +49,7 @@ public class controladorCategoria
    } 
    
    @PostMapping("/categorias")
-   public String guardarCategoria(@ModelAttribute Categoria categoria)
+   public String guardarCategoria(@ModelAttribute Categoria categoria) // Sirve para guardar y actualizar
    {
        servicio.guardarCategoria(categoria);
        
