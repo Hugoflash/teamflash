@@ -25,13 +25,13 @@ public class servicioCategoria
         return lista;
     }
     
-    public Categoria consultarCategoria(int id) // consultar por el id
+    public Categoria consultarCategoriaById(int id) // consultar por el id
     {
-        Categoria categoria = repo.findById(id).get();
+        Categoria categoria = repo.findById(id).orElse(null); // si no encuentra la categoria devuelve null.
         return categoria;
     }
     
-    public List<Categoria> consultarCategorias(String criterio)  // consultar segun el nombre y lo retorna en una lista.
+    public List<Categoria> consultarCategoriasByCriterio(String criterio)  // consultar segun el nombre y lo retorna en una lista.
     {
         List<Categoria> lista = repo.findByNombreContaining(criterio);
         return lista;
@@ -43,9 +43,14 @@ public class servicioCategoria
         return lista;
     }
     
+    public void eliminarCategoria(Categoria categoria) // eliminar categoria recibiendo un objeto de la misma clase
+    {
+        repo.delete(categoria);
+    }
+    
     public Categoria inhabilitarCategoria(int id,boolean habilitado) // inhabilitar categoria, por id y estado.
     {
-        Categoria categoria = repo.findById(id).get();
+        Categoria categoria = repo.findById(id).orElse(null); // findById(id).get() devuelve un objeto de categoria
         categoria.setHabilitado(habilitado);
         Categoria result = repo.save(categoria);
         return result;

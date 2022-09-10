@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Categorias</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    </head>
+    <body>
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="/">Tienda Flash</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link" aria-current="page" href="/">Inicio</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" href="/categorias">Categorías</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/categoria/crearcategoria">Nueva categoría</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <div class="container">
+            <div>
+                <h5>Tabla de categorias</h5>
+                <form action="/categorias" method="get">
+                    <label for="buscarCategoria">Buscar por:</label>
+                    <input type="text" id="buscarCategoria" name="criterio" th:value = "${criterio}">
+                    <input type="submit" value="Buscar"><br>
+                </form>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Habilitado</th>
+                            <th scope="col">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:if = "${not #lists.isEmpty(categorias)}" th:each = "categoria : ${categorias}">
+                            <th scope="row" th:text="${categoria.id}">...</th>
+                            <td th:text="${categoria.nombre}">...</td>
+                            <td th:text="${categoria.habilitado}">...</td>
+                            <td>
+                                <a th:href = "${'/categoria/crearcategoria/' + categoria.id}">Editar</a>
+                                <a th:href = "${'/categoria/eliminar/' + categoria.id}">Eliminar</a>
+                            </td> 
+                        </tr>
+                        <tr th:if = "${#lists.isEmpty(categorias)}">
+                            <td colspan = "3">No se encontraron registros</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+
+        </div>
+
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+    </body>
+</html>

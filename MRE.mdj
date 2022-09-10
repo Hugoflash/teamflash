@@ -348,21 +348,6 @@
 												},
 												{
 													"_type": "ERDColumnView",
-													"_id": "AAAAAAGDAXs+YD9Jtrg=",
-													"_parent": {
-														"$ref": "AAAAAAGDAXN4pz5CEWI="
-													},
-													"model": {
-														"$ref": "AAAAAAGDAXs+VT9Gm9c="
-													},
-													"font": "Arial;13;0",
-													"left": 101,
-													"top": 322,
-													"width": 124.75537109375,
-													"height": 13
-												},
-												{
-													"_type": "ERDColumnView",
 													"_id": "AAAAAAGDAXrIjj9CysQ=",
 													"_parent": {
 														"$ref": "AAAAAAGDAXN4pz5CEWI="
@@ -372,7 +357,7 @@
 													},
 													"font": "Arial;13;0",
 													"left": 101,
-													"top": 337,
+													"top": 322,
 													"width": 124.75537109375,
 													"height": 13
 												},
@@ -387,7 +372,7 @@
 													},
 													"font": "Arial;13;0",
 													"left": 101,
-													"top": 352,
+													"top": 337,
 													"width": 124.75537109375,
 													"height": 13
 												}
@@ -396,7 +381,7 @@
 											"left": 96,
 											"top": 287,
 											"width": 134.75537109375,
-											"height": 83
+											"height": 68
 										}
 									],
 									"font": "Arial;13;0",
@@ -432,7 +417,7 @@
 											"top": 93,
 											"width": 146.2763671875,
 											"height": 13,
-											"text": "tdetalle"
+											"text": "tdetalles"
 										},
 										{
 											"_type": "ERDColumnCompartmentView",
@@ -1213,7 +1198,7 @@
 									"_parent": {
 										"$ref": "AAAAAAGDAWyTJz2iFEU="
 									},
-									"name": "precio",
+									"name": "presentacion",
 									"type": "int",
 									"length": 0
 								},
@@ -1233,8 +1218,8 @@
 									"_parent": {
 										"$ref": "AAAAAAGDAWyTJz2iFEU="
 									},
-									"name": "presentacion",
-									"type": "String",
+									"name": "existencia",
+									"type": "int",
 									"length": 0
 								},
 								{
@@ -1243,7 +1228,7 @@
 									"_parent": {
 										"$ref": "AAAAAAGDAWyTJz2iFEU="
 									},
-									"name": "existencia",
+									"name": "precio",
 									"type": "int",
 									"length": 0
 								},
@@ -1328,20 +1313,6 @@
 								},
 								{
 									"_type": "ERDColumn",
-									"_id": "AAAAAAGDAXs+VT9Gm9c=",
-									"_parent": {
-										"$ref": "AAAAAAGDAXN4pj4+CII="
-									},
-									"name": "id_detalle",
-									"type": "int",
-									"length": 0,
-									"foreignKey": true,
-									"referenceTo": {
-										"$ref": "AAAAAAGDAXUCqj53qM8="
-									}
-								},
-								{
-									"_type": "ERDColumn",
 									"_id": "AAAAAAGDAXrIhT8/6Dc=",
 									"_parent": {
 										"$ref": "AAAAAAGDAXN4pj4+CII="
@@ -1368,7 +1339,7 @@
 							"_parent": {
 								"$ref": "AAAAAAGDAWl83T1eIeI="
 							},
-							"name": "tdetalle",
+							"name": "tdetalles",
 							"columns": [
 								{
 									"_type": "ERDColumn",
