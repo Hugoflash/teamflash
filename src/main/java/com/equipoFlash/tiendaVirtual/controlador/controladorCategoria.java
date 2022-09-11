@@ -37,10 +37,12 @@ public class controladorCategoria
            model.addAttribute("criterio",criterio);
        }
        
+       model.addAttribute("newCategoria",new Categoria());
+       
        return "categorias";
    }
    
-   @GetMapping("/categoria/crearcategoria")
+   @GetMapping("/categoria/crearcategoria")  // ruta de acceso a la pagina nueva_categoria
    public String crearNuevaCategoria(Model modelo)
    {
        Categoria categoria = new Categoria();
@@ -55,6 +57,14 @@ public class controladorCategoria
        
        return "redirect:/categorias";
    }
+   
+    @PostMapping("/categorias/crear")
+    public String agregarCategoria(@ModelAttribute Categoria categoria)
+    {
+       servicio.guardarCategoria(categoria);
+       
+       return "redirect:/categorias";
+    }
    
    @GetMapping("/categoria/crearcategoria/{id}")
    public String cargarCategoriasById(Model modelo, @PathVariable int id )
@@ -72,5 +82,22 @@ public class controladorCategoria
        
        return "redirect:/categorias";
    }
+  
+   @GetMapping("/categoria/eliminar")
+   public String eliminarCategoriaConModal(@RequestParam(value="idAux", required=false) int id)
+   {
+       if(id > 0)
+       {
+           Categoria eliminado = servicio.consultarCategoriaById(id);
+           servicio.eliminarCategoria(eliminado);
+       }
+       else
+       {
+           System.out.println(" !!! Error al eliminar categoria !!!\n");
+       }
+       return "redirect:/categorias";
+   }
+   
+  
    
 }
