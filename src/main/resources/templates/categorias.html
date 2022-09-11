@@ -22,9 +22,9 @@
                             <li class="nav-item">
                                 <a class="nav-link active" href="/categorias">Categorías</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="/categoria/crearcategoria">Nueva categoría</a>
-                            </li>
+                            <!-- <li class="nav-item">
+                                <a class="nav-link" href="/categoria/editar">Nueva categoría</a>
+                            </li> -->
                         </ul>
                     </div>
                 </div>
@@ -56,7 +56,7 @@
                             <td th:text="${categoria.nombre}">...</td>
                             <td th:text="${categoria.habilitado}">...</td>
                             <td>
-                                <a th:href = "${'/categoria/crearcategoria/' + categoria.id}">Editar</a>
+                                <a th:href = "${'/categoria/editar/' + categoria.id}">Editar</a>
                                 <a href="#" th:onclick="|eliminarCategoria(${categoria.id})|">Eliminar</a>
                                 <!-- <a th:href = "${'/categoria/eliminar/' + categoria.id}" >Eliminar</a> -->
                             </td> 
@@ -82,7 +82,7 @@
                     </div>
                     <form action="/categoria/eliminar" method="get">
                         <div class="modal-body">
-                            <p>Va a eliminar la categoria con <b>ID:</b> <span id="mostrarId"></span>, esta seguro?</p>
+                            <p>Va a eliminar la categoria con <b>Id:</b> <span id="mostrarId"></span>, esta seguro?</p>
                             <input type="hidden" name="idAux" id="idAux">
                         </div>
                         <div class="modal-footer">

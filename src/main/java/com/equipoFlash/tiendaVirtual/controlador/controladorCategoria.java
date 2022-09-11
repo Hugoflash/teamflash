@@ -47,7 +47,7 @@ public class controladorCategoria
    {
        Categoria categoria = new Categoria();
        modelo.addAttribute("categoria",categoria);
-       return "nueva_categoria";
+       return "editar_categoria";
    } 
    
    @PostMapping("/categorias")
@@ -59,22 +59,22 @@ public class controladorCategoria
    }
    
     @PostMapping("/categorias/crear")
-    public String agregarCategoria(@ModelAttribute Categoria categoria)
+    public String agregarCategoria(@ModelAttribute Categoria categoria) //crear nueva categoria con Modal
     {
        servicio.guardarCategoria(categoria);
        
        return "redirect:/categorias";
     }
    
-   @GetMapping("/categoria/crearcategoria/{id}")
-   public String cargarCategoriasById(Model modelo, @PathVariable int id )
+   @GetMapping("/categoria/editar/{id}")
+   public String modificarCategoriasById(Model modelo, @PathVariable int id ) //modifica la categoria con el id de la fila
    {
        Categoria resultado = servicio.consultarCategoriaById(id);
        modelo.addAttribute("categoria",resultado);
-       return "nueva_categoria";
+       return "editar_categoria";
    }
    
-   @GetMapping("/categoria/eliminar/{id}")
+   @GetMapping("/categoria/eliminar/{id}")  // elimina la categoria con el id directamente, sin advertencia.
    public String eliminarCategoria(@PathVariable int id)
    {
        Categoria guardado = servicio.consultarCategoriaById(id);
@@ -84,7 +84,7 @@ public class controladorCategoria
    }
   
    @GetMapping("/categoria/eliminar")
-   public String eliminarCategoriaConModal(@RequestParam(value="idAux", required=false) int id)
+   public String eliminarCategoriaConModal(@RequestParam(value="idAux", required=false) int id) //elimina la categoria al confirmar en el Modal.
    {
        if(id > 0)
        {
