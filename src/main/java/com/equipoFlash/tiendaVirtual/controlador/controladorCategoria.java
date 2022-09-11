@@ -58,13 +58,13 @@ public class controladorCategoria
        return "redirect:/categorias";
    }
    
-    @PostMapping("/categorias/agregar")
-   public String agregarCategoria(@ModelAttribute Categoria categoria)
-   {
+    @PostMapping("/categorias/crear")
+    public String agregarCategoria(@ModelAttribute Categoria categoria)
+    {
        servicio.guardarCategoria(categoria);
        
-       return "categorias";
-   }
+       return "redirect:/categorias";
+    }
    
    @GetMapping("/categoria/crearcategoria/{id}")
    public String cargarCategoriasById(Model modelo, @PathVariable int id )
@@ -84,7 +84,7 @@ public class controladorCategoria
    }
   
    @GetMapping("/categoria/eliminar")
-   public String eliminarCategoriaConModal(@RequestParam(value="id", required=false) int id)
+   public String eliminarCategoriaConModal(@RequestParam(value="idAux", required=false) int id)
    {
        if(id > 0)
        {
