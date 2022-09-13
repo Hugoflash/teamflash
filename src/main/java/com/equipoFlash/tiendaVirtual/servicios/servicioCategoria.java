@@ -7,8 +7,9 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+
 @Service
-public class servicioCategoria 
+public class servicioCategoria
 {
     @Autowired // inyeccion de la interfaz interCategoriaRepositorio
     private interCategoriaRepositorio repo;

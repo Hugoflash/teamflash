@@ -6,6 +6,7 @@ import com.equipoFlash.tiendaVirtual.entidades.Categoria;
 import java.util.List;
 import org.springframework.stereotype.Repository;
 
+
 /**
  *
  * @author anderson
@@ -16,3 +17,4 @@ public interface interCategoriaRepositorio extends JpaRepository<Categoria,Integ
     public List<Categoria> findByNombreContaining(String criterio);
     public List<Categoria> findByHabilitadoTrue();
 }
+

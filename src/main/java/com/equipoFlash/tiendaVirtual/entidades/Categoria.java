@@ -28,6 +28,7 @@ public class Categoria
         this.nombre = nombre;
         this.habilitado = habilitado;
     }
+    
     public Categoria(String nombre, boolean habilitado)
     {
         this.nombre = nombre;

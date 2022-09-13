@@ -129,9 +129,9 @@
         
         <script>
             function eliminarCategoria(id) {
-                document.getElementById("idAux").value=id;
+                //document.getElementById("idAux").value=id;
                 $("#modalConfirmar").modal("show");
-                //$("#idAux").val(id);
+                $("#idAux").val(id);
                 $("#mostrarId").html(id);
                 console.log("click " + id);
             }
