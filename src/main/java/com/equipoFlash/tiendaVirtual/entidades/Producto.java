@@ -6,12 +6,16 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
 /**
  *
  * @author anderson
  */
-@Entity (name = "tproductos")
+@Entity
+@Table (name="tproductos") 
 public class Producto 
 {
     @Id
@@ -34,11 +38,12 @@ public class Producto
     @Column(name = "existencia", nullable = false)
     private int existencia;
     
-    @Column(name = "id_categoria", nullable = false)
-    private int categoria;
+    @ManyToOne
+    @JoinColumn(name="id_categoria")
+    private Categoria categoria;
     
     public Producto(){}
-    public Producto(int id,String nombre,String marca,int precio,String presentacion,int existencia,int categoria)
+    public Producto(int id,String nombre,String marca,int precio,String presentacion,int existencia,Categoria categoria)
     {
         this.id = id;
         this.nombre = nombre;
@@ -49,7 +54,7 @@ public class Producto
         this.categoria = categoria;
     }
     
-    public Producto(String nombre,String marca,int precio,String presentacion,int existencia,int categoria)
+    public Producto(String nombre,String marca,int precio,String presentacion,int existencia,Categoria categoria)
     {
         this.nombre = nombre;
         this.marca = marca;
@@ -80,7 +85,7 @@ public class Producto
         return presentacion;
     }
 
-    public int getCategoria() {
+    public Categoria getCategoria() {
         return categoria;
     }
 
@@ -112,7 +117,7 @@ public class Producto
         this.existencia = existencia;
     }
     
-    public void setCategoria(int categoria) {
+    public void setCategoria(Categoria categoria) {
         this.categoria = categoria;
     }
     

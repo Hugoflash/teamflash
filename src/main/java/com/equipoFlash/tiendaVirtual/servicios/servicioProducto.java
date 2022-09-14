@@ -38,12 +38,21 @@ public class servicioProducto
     
      public List<Producto> consultarProductosByCriterio(String criterio)  // consultar segun el nombre y lo retorna en una lista.
     {
-        List<Producto> lista = repo.findByNombreContaining(criterio);
+        List<Producto> lista = repo.findByNombreContainingOrMarcaContaining(criterio,criterio);
         return lista;
     }
     
-    public void eliminarProducto(Producto producto)
+    public boolean eliminarProducto(int id) // Elimina por Id y retorna un booleano
     {
-        repo.delete(producto);
+       Producto p = repo.findById(id).orElse(null);
+       if( p == null)
+       {
+           return false;
+       }
+       else
+       {
+           repo.delete(p);
+           return true;
+       }
     }
 }
