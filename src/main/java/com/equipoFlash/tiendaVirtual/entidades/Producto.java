@@ -43,6 +43,7 @@ public class Producto
     private Categoria categoria;
     
     public Producto(){}
+
     public Producto(int id,String nombre,String marca,double precio,String presentacion,double existencia,Categoria categoria)
     {
         this.id = id;
@@ -89,6 +90,7 @@ public class Producto
         return categoria;
     }
 
+
     public double getExistencia() {
         return existencia;
     }
@@ -114,6 +116,7 @@ public class Producto
     }
 
     public void setExistencia(double existencia) {
+
         this.existencia = existencia;
     }
     
