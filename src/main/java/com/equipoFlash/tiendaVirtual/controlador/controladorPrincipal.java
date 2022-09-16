@@ -25,4 +25,10 @@ public class controladorPrincipal
     {
         return "panel";
     }
+    
+    @GetMapping("/clientes")
+    public String cargarClietes()
+    {
+        return "clientes";
+    }
 }

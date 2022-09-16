@@ -34,112 +34,32 @@
                 </div>
             </nav>
         </header>
+        <br>
+        <div class="container">
+            <section class="tienda">
 
-        <div class=" galeria">
-            <div class=" galeria_lienzo">
+                <article  class="article-1" onclick=window.open('/clientes') >
+                    <figure><center> <a href="/clientes"> <img src="images/registro.png" alt=""/> </a></center></figure>
+                    <p class="acceso">Gestionar clientes registrados.</p>
+                    <div><h5>Clientes</h5></div>  
+                </article>
+                <article  class="article-1" onclick=window.open('/categorias')>
+                    <figure><center> <img src="images/categorias.png" alt=""/> </center></figure>
+                    <p class="acceso"> Acceso al registro de nuevas categorias, actualizacion y consultas</p>
+                    <div><h5>Gestion Categorias</h5></div>  
+                </article>
 
-                <input type="radio" name="nav" class="elemento1" id="A"/>
-                <input type="radio" name="nav" class="elemento2" id="B"/>
-                <input type="radio" name="nav" class="elemento3" id="C"/>
+                <article class="article-1" onclick=window.open('/productos')>
+                    <figure><center> <img src="images/productos.png" alt=""/> </center></figure>
+                    <p class="acceso"> Acceso al registro de nuevos productos, actualizacion y consultas</p>
+                    <div><h5>Gestion Productos</h5></div> 
+                </article>
 
-                <div class="galeria_contenedor">
+                </article>
 
-                    <figure>
-                        <img src="images/carrucel1.png" alt="" width="600px"/>
-                    </figure>
-
-                    <figure>
-                        <img src="images/carrucel2.png" alt="" width="600px"/>
-
-                    </figure>
-
-                    <figure>
-                        <img src="images/carrucel3.png" alt="" width="600px"/>
-
-                    </figure>
-                </div>          
-            </div> 
+            </section>
         </div>
 
-        <div class="controles">
-            <label for="A"></label>
-            <label for="B"></label>
-            <label for="C"></label>
-        </div> 
-
-        <section class="tienda">
-
-            <article  class="article-1" onclick=window.open('Registrarse_Cliente.html') >
-                <figure><center> <img src="images/registro.png" alt=""/> </center></figure>
-                <p class="acceso">Registrarse aqui para acceder a realizar compras en Linea de manera facily segura.</p>
-                <div><h5>Acceso Clientes</h5></div>  
-            </article>
-            <article  class="article-1" onclick=window.open('categorias.html')>
-                <figure><center> <img src="images/categorias.png" alt=""/> </center></figure>
-                <p class="acceso"> Acceso al registro de nuevas categorias, actualizacion y consultas</p>
-                <div><h5>Gestion Categorias</h5></div>  
-            </article>
-
-            <article class="article-1" onclick=window.open('productos.html')>
-                <figure><center> <img src="images/productos.png" alt=""/> </center></figure>
-                <p class="acceso"> Acceso al registro de nuevos productos, actualizacion y consultas</p>
-                <div><h5>Gestion Productos</h5></div> 
-            </article>
-
-            <article  class="article-2" >
-                <figure><center> <img src="images/huevos.png" alt=""/> </center></figure>
-                <p class="Datos_producto"> Clase A, cubeta, Unidades 30, Precio $ 11.500</p>
-                <input type="submit" class="btn btn-success" value="Añadir a mi Canasta">
-
-            </article>
-            <article  class="article-2" >
-                <figure><center> <img src="images/chocolate.png" alt=""/> </center></figure>
-                <p class="Datos_producto"> Corona , Chocolate, Unidades 30, Precio $ 5.100</p>
-                <input type="submit" class="btn btn-success" value="Añadir a mi Canasta">
-
-            </article>
-
-            <article class="article-2" >
-                <figure><center> <img src="images/arroz.png" alt=""/> </center></figure>
-                <p class="Datos_producto"> Diana Arroz, Sal, Unidades 50, Precio $ 2.400</p>
-                <input type="submit" class="btn btn-success" value="Añadir a mi Canasta">
-
-            </article>
-            <article  class="article-2" >
-                <figure><center> <img src="images/fab.png" alt=""/> </center></figure>
-                <p class="Datos_producto"> Fab, Jabon, Unidades 60, Precio $ 9.200</p>
-                <input type="submit" class="btn btn-success" value="Añadir a mi Canasta">
-
-            </article>
-            <article  class="article-2" >
-                <figure><center> <img src="images/aceite.png" alt=""/> </center></figure>
-                <p class="Datos_producto"> Riquisimo, Aceite, Unidades 30, Precio $ 15.000</p>
-                <input type="submit" class="btn btn-success" value="Añadir a mi Canasta">
-
-            </article>
-
-            <article class="article-2" >
-                <figure><center> <img src="images/sal.png" alt=""/> </center></figure>
-                <p class="Datos_producto"> Alta Pureza, Sal, Unidades 30, Precio $ 3.000</p>
-                <input type="submit" class="btn btn-success" value="Añadir a mi Canasta">
-            </article>
-
-        </article>
-
-    </section> 
-
-    <div class="espacio"> </div>
-    <div class="PiePagina">
-        <footer>
-            <p class="NombreNegocio"> Poner Aqui el Nombre Negocio </p>
-            <p class="Direccion"> Direccion: Poner direccion </p>
-            <p> Telefono: Poner Numero Telefono </p>
-            <p> Horario de Atencion: Poner los horarios de atencion </p>
-            <p> Web: Poner direccion de la web </p>  
-        </footer> 
-
-    </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
-</body>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+    </body>
 </html>
