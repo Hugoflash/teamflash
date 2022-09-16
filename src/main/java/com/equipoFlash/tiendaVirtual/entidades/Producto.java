@@ -26,19 +26,19 @@ public class Producto
     private String marca;
     
     @Column(name = "precio", nullable = false)
-    private int precio;
+    private double precio;
     
     @Column(name = "presentacion", length = 45, nullable = false)
     private String presentacion;
     
     @Column(name = "existencia", nullable = false)
-    private int existencia;
+    private double existencia;
     
     @Column(name = "id_categoria", nullable = false)
     private int categoria;
     
     public Producto(){}
-    public Producto(int id,String nombre,String marca,int precio,String presentacion,int existencia,int categoria)
+    public Producto(int id,String nombre,String marca,double precio,String presentacion,double existencia,int categoria)
     {
         this.id = id;
         this.nombre = nombre;
@@ -49,7 +49,7 @@ public class Producto
         this.categoria = categoria;
     }
     
-    public Producto(String nombre,String marca,int precio,String presentacion,int existencia,int categoria)
+    public Producto(String nombre,String marca,double precio,String presentacion,double  existencia,int categoria)
     {
         this.nombre = nombre;
         this.marca = marca;
@@ -84,7 +84,7 @@ public class Producto
         return categoria;
     }
 
-    public int getExistencia() {
+    public double  getExistencia() {
         return existencia;
     }
     
@@ -100,7 +100,7 @@ public class Producto
         this.marca = marca;
     }
 
-    public void setPrecio(int precio) {
+    public void setPrecio(double  precio) {
         this.precio = precio;
     }
 
@@ -108,7 +108,7 @@ public class Producto
         this.presentacion = presentacion;
     }
 
-    public void setExistencia(int existencia) {
+    public void setExistencia(double  existencia) {
         this.existencia = existencia;
     }
     
