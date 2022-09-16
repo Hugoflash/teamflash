@@ -42,13 +42,13 @@ public class controladorCategoria
        return "categorias";
    }
    
-   @GetMapping("/categoria/crearcategoria")  // ruta de acceso a la pagina nueva_categoria
-   public String crearNuevaCategoria(Model modelo)
-   {
-       Categoria categoria = new Categoria();
-       modelo.addAttribute("categoria",categoria);
-       return "editar_categoria";
-   } 
+//   @GetMapping("/categoria/nueva")  // ruta de acceso a la pagina nueva_categoria
+//   public String crearNuevaCategoria(Model modelo)
+//   {
+//       Categoria categoria = new Categoria();
+//       modelo.addAttribute("categoria",categoria);
+//       return "editar_categoria";
+//   } 
    
    @PostMapping("/categorias")
    public String guardarCategoria(@ModelAttribute Categoria categoria) // Sirve para guardar y actualizar
@@ -58,13 +58,13 @@ public class controladorCategoria
        return "redirect:/categorias";
    }
    
-    @PostMapping("/categorias/crear")
-    public String agregarCategoria(@ModelAttribute Categoria categoria) //crear nueva categoria con Modal
-    {
-       servicio.guardarCategoria(categoria);
-       
-       return "redirect:/categorias";
-    }
+//    @PostMapping("/categorias/crear")
+//    public String agregarCategoria(@ModelAttribute Categoria categoria) //crear nueva categoria con Modal
+//    {
+//       servicio.guardarCategoria(categoria);
+//       
+//       return "redirect:/categorias";
+//    }
    
    @GetMapping("/categoria/editar/{id}")
    public String modificarCategoriasById(Model modelo, @PathVariable int id ) //modifica la categoria con el id de la fila

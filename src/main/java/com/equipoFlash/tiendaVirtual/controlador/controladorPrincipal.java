@@ -19,4 +19,10 @@ public class controladorPrincipal
     {
         return "index";
     }
+    
+    @GetMapping("/administrar")
+    public String cargarPanel()
+    {
+        return "panel";
+    }
 }
