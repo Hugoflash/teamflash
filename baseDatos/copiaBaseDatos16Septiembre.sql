@@ -28,7 +28,7 @@ CREATE TABLE `tcategorias` (
   `habilitado` tinyint NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `nombre_UNIQUE` (`nombre`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=38 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -37,7 +37,7 @@ CREATE TABLE `tcategorias` (
 
 LOCK TABLES `tcategorias` WRITE;
 /*!40000 ALTER TABLE `tcategorias` DISABLE KEYS */;
-INSERT INTO `tcategorias` VALUES (1,'Aseo personal',1),(2,'Articulos deportivos',1);
+INSERT INTO `tcategorias` VALUES (1,'Aseo personal',1),(15,'Frutas y verduras',1),(20,'Enlatados',1),(22,'Abarrotes',1),(37,'Ofertas',1);
 /*!40000 ALTER TABLE `tcategorias` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -49,15 +49,16 @@ DROP TABLE IF EXISTS `tclientes`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `tclientes` (
-  `id` int NOT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
+  `identificacion` int NOT NULL,
   `nombre` varchar(45) NOT NULL,
   `direccion` varchar(45) NOT NULL,
   `celular` int NOT NULL,
   `email` varchar(45) NOT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `id_UNIQUE` (`id`),
   UNIQUE KEY `email_UNIQUE` (`email`),
-  UNIQUE KEY `celular_UNIQUE` (`celular`)
+  UNIQUE KEY `celular_UNIQUE` (`celular`),
+  UNIQUE KEY `identificacion_UNIQUE` (`identificacion`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -113,8 +114,8 @@ CREATE TABLE `tfacturas` (
   `total` int NOT NULL,
   `id_clientes` int NOT NULL,
   PRIMARY KEY (`id`),
-  KEY `FK_facturasClientes_idx` (`id_clientes`),
-  CONSTRAINT `FK_facturasClientes` FOREIGN KEY (`id_clientes`) REFERENCES `tclientes` (`id`)
+  KEY `FK_clienteFacturas_idx` (`id_clientes`),
+  CONSTRAINT `FK_clienteFacturas` FOREIGN KEY (`id_clientes`) REFERENCES `tclientes` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -139,13 +140,13 @@ CREATE TABLE `tproductos` (
   `nombre` varchar(45) NOT NULL,
   `presentacion` varchar(45) NOT NULL,
   `marca` varchar(45) NOT NULL,
-  `existencia` int NOT NULL,
-  `precio` int NOT NULL,
+  `existencia` double NOT NULL,
+  `precio` double NOT NULL,
   `id_categoria` int NOT NULL,
   PRIMARY KEY (`id`),
   KEY `FK_categoriaProductos_idx` (`id_categoria`),
   CONSTRAINT `FK_productosCategorias` FOREIGN KEY (`id_categoria`) REFERENCES `tcategorias` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -154,6 +155,7 @@ CREATE TABLE `tproductos` (
 
 LOCK TABLES `tproductos` WRITE;
 /*!40000 ALTER TABLE `tproductos` DISABLE KEYS */;
+INSERT INTO `tproductos` VALUES (1,'Protectores Nosotras','sobre','Nosotras',180,300,1),(4,'Arvejas Respin','Lata','Respin',200,6500,20);
 /*!40000 ALTER TABLE `tproductos` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -166,4 +168,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-09-08 12:09:50
+-- Dump completed on 2022-09-16 11:04:09
