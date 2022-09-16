@@ -14,5 +14,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface interProductoRepositorio extends JpaRepository<Producto,Integer>
 {
-    public List<Producto> findByNombreContaining(String criterio);
+    public List<Producto> findByNombreContainingOrMarcaContaining(String criterio1, String criterio2);
 }

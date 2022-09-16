@@ -19,31 +19,41 @@ public class servicioProducto
     private interProductoRepositorio repo;
     
     public Producto guardarProducto(Producto producto)
-    {
-        Producto guardado = repo.save(producto);
-        return guardado;
+    { 
+        return repo.save(producto);
     }
     
      public List<Producto> consultarProductos() // funciona para consultar todos los producto y las retorna en una lista.
     {
-        List<Producto> lista = repo.findAll();
-        return lista;
+        return repo.findAll();
     }
      
-    public Producto consultarProductosById(int id) // consultar por el id
+    public Producto consultarProductoById(int id) // consultar por el id
     {
-        Producto producto = repo.findById(id).orElse(null); // si no encuentra el producto devuelve null.
-        return producto;
+        return repo.findById(id).orElse(null); // si no encuentra el producto devuelve null.
     }
     
-     public List<Producto> consultarProductosByCriterio(String criterio)  // consultar segun el nombre y lo retorna en una lista.
+     public List<Producto> consultarProductoByCriterio(String criterio)  // consultar segun el nombre y lo retorna en una lista.
     {
-        List<Producto> lista = repo.findByNombreContaining(criterio);
-        return lista;
+        return repo.findByNombreContainingOrMarcaContaining(criterio,criterio);
     }
     
-    public void eliminarProducto(Producto producto)
+//    public void eliminar(Producto p)
+//    {
+//        repo.delete(p);
+//    }
+     
+    public boolean eliminarProducto(int id) // Elimina por Id y retorna un booleano
     {
-        repo.delete(producto);
+       Producto p = repo.findById(id).orElse(null);
+       if( p == null)
+       {
+           return false;
+       }
+       else
+       {
+           repo.delete(p);
+           return true;
+       }
     }
 }

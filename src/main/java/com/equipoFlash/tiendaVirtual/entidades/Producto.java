@@ -6,12 +6,16 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
 /**
  *
  * @author anderson
  */
-@Entity (name = "tproductos")
+@Entity
+@Table(name="tproductos") 
 public class Producto 
 {
     @Id
@@ -34,11 +38,13 @@ public class Producto
     @Column(name = "existencia", nullable = false)
     private double existencia;
     
-    @Column(name = "id_categoria", nullable = false)
-    private int categoria;
+    @ManyToOne
+    @JoinColumn(name="id_categoria")
+    private Categoria categoria;
     
     public Producto(){}
-    public Producto(int id,String nombre,String marca,double precio,String presentacion,double existencia,int categoria)
+
+    public Producto(int id,String nombre,String marca,double precio,String presentacion,double existencia,Categoria categoria)
     {
         this.id = id;
         this.nombre = nombre;
@@ -49,7 +55,7 @@ public class Producto
         this.categoria = categoria;
     }
     
-    public Producto(String nombre,String marca,double precio,String presentacion,double  existencia,int categoria)
+    public Producto(String nombre,String marca,double precio,String presentacion,double existencia,Categoria categoria)
     {
         this.nombre = nombre;
         this.marca = marca;
@@ -80,11 +86,12 @@ public class Producto
         return presentacion;
     }
 
-    public int getCategoria() {
+    public Categoria getCategoria() {
         return categoria;
     }
 
-    public double  getExistencia() {
+
+    public double getExistencia() {
         return existencia;
     }
     
@@ -100,7 +107,7 @@ public class Producto
         this.marca = marca;
     }
 
-    public void setPrecio(double  precio) {
+    public void setPrecio(double precio) {
         this.precio = precio;
     }
 
@@ -108,11 +115,12 @@ public class Producto
         this.presentacion = presentacion;
     }
 
-    public void setExistencia(double  existencia) {
+    public void setExistencia(double existencia) {
+
         this.existencia = existencia;
     }
     
-    public void setCategoria(int categoria) {
+    public void setCategoria(Categoria categoria) {
         this.categoria = categoria;
     }
     

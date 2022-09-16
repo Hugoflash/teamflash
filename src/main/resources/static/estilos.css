@@ -1,0 +1,17 @@
+
+body{
+    background:activeborder;
+}
+
+.form_cliente{
+  max-width: 25em;  
+  padding: 1.3em;
+  margin: 0 auto;
+
+  font-weight: bold;
+  border-radius:0.5em;
+  box-shdow: inset 1px 1px 22px 4px;
+
+}
+
+
