@@ -4,7 +4,6 @@
         <title>Nuevo producto</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-        <link href="/estilos.css" rel="stylesheet" type="text/css"/>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
 
     </head>
@@ -35,43 +34,44 @@
 
         <div class="container">
             <div class="form-group">
-                <h2 class="display-6 text-primary text-center my-3">Nuevo Producto</h2>
-                <form action="/productos" class="row g-3 needs-validation" method="post" th:object="${producto}">
+                <h5 class="">Nuevo Producto</h5>
+                <form action="/productos" class="row" method="post" th:object="${producto}">
                     <div>
                         <input type ="hidden" id="id" name="id" th:field="*{id}">
                     </div>
                     <div class="col-md-4">
-                        <label for = "nombre" class="dispaly-text text-primary text-center my-3" >Nombre: </label>
+                        <label for = "nombre" class="" >Nombre: </label>
                         <input type="text" class="form-control" id="nombre" name="nombre" required maxlength="45" minlength="5" th:field="*{nombre}">
                     </div>
                     <div class="col-md-4">
-                        <label for="marca" class="dispaly-text text-primary text-center my-3">Marca: </label>
+                        <label for="marca" class="">Marca: </label>
                         <input type="text" class="form-control" id="marca" name="marca" th:field="*{marca}" required maxlength="40" minlength="5">
                     </div>
                     <div class="col-md-4">
-                        <label for="precio" class="dispaly-text text-primary text-center my-3">Precio: </label>
+                        <label for="precio" class="">Precio: </label>
                         <input type="number" class="form-control" id="precio" name="precio" th:field="*{precio}" required maxlength="12" min="0" oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
                     </div>
                     <div class="col-md-4">
-                        <label for="presentacion" class="dispaly-text text-primary text-center my-3">Presentacion: </label>
+                        <label for="presentacion" class="">Presentacion: </label>
                         <input type="text" class="form-control" id="presentacion" name="presentacion" th:field="*{presentacion}" required maxlength="45" minlength="4">
                     </div>
                     <div class="col-md-3">
-                        <label for="existencia" class="dispaly-text text-primary text-center my-3">Cantidad Existencia: </label>
+                        <label for="existencia" class="">Cantidad Existencia: </label>
                         <input type="number" class="form-control" id="existencia" name="existencia" th:field="*{existencia}" required maxlength="12" min="0" oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
                     </div>
                     <div class="col-md-3">
-                        <label for="categoria" class="dispaly-text text-primary text-center my-3" >Categoria: </label>
+                        <label for="categoria" class="" >Categoria: </label>
                         <select th:field="*{categoria}" id="categoria" name="categoria" class="form-select form-select-sm" required>
                             <option th:value="null" th:text="'Seleccione una opcion'"></option>
                             <option th:each="categoria : ${categorias}" th:value="${categoria.id}" th:text="${categoria.nombre}"></option>
                         </select>
                     </div>
                     <br>
-                    <div class="col-12">
+                    <div class="" style="margin-top: 20px">
                         <input type="submit" value="Guardar" class="btn btn-warning">
+                        <a href = "/productos" style="margin-left: 20px">Cancelar</a>
                     </div>
-                    <a href = "/productos">Cancelar</a>
+                    
                 </form>
             </div>
         </div>

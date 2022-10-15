@@ -37,46 +37,52 @@
 
         <div class = "container">
             <h5>Tabla productos</h5>
-            <form action="/productos" method="get">
-                <label for="buscarProducto">Buscar por:</label>
-                <input type="text" id="buscarProducto" name = "criterio" th:value = "${criterio}">
-                <input type="submit" value="Buscar"><br>
-            </form>
 
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th scope="col">ID</th>
-                        <th scope="col">Nombre</th>
-                        <th scope="col">Marca</th>
-                        <th scope="col">Precio</th>
-                        <th scope="col">Presentacion</th>
-                        <th scope="col">Existencia</th>
-                        <th scope="col">Categoria</th>
-                        <th scope="col">Acciones</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr th:if = "${not #lists.isEmpty(productos)}" th:each = "producto : ${productos}">
-                        <th scope="row" th:text ="${producto.id}">...</th>
-                        <td th:text ="${producto.nombre}">...</td>
-                        <td th:text ="${producto.marca}">...</td>
-                        <td th:text ="${producto.precio}">...</td>
-                        <td th:text ="${producto.presentacion}">...</td>
-                        <td th:text ="${producto.existencia}">...</td>
-                        <td th:text ="${producto.categoria.nombre}">...</td>
-                        <td>
-                            <a th:href = "${'/producto/editar/' + producto.id}">Editar</a>
-                            <a href="#" th:onclick="|eliminarProducto(${producto.id})|">Eliminar</a>
-                            <!-- <a th:href = "${'/producto/eliminar/' + producto.id}" >Eliminar</a> -->
-                        </td>
-                    </tr>
-                    <tr th:if = "${#lists.isEmpty(productos)}">
-                        <td colspan = "8">No se encontraron registros</td>
-                    </tr>
+            <div>
+                <div>
+                    <form action="/productos" method="get">
+                        <label for="buscarProducto">Buscar por:</label>
+                        <input type="text" id="buscarProducto" name = "criterio" th:value = "${criterio}">
+                        <input type="submit" value="Buscar"><br>
+                    </form>
+                </div>
+                <div>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">ID</th>
+                                <th scope="col">Nombre</th>
+                                <th scope="col">Marca</th>
+                                <th scope="col">Precio</th>
+                                <th scope="col">Presentacion</th>
+                                <th scope="col">Existencia</th>
+                                <th scope="col">Categoria</th>
+                                <th scope="col">Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr th:if = "${not #lists.isEmpty(productos)}" th:each = "producto : ${productos}">
+                                <th scope="row" th:text ="${producto.id}">...</th>
+                                <td th:text ="${producto.nombre}">...</td>
+                                <td th:text ="${producto.marca}">...</td>
+                                <td th:text ="${producto.precio}">...</td>
+                                <td th:text ="${producto.presentacion}">...</td>
+                                <td th:text ="${producto.existencia}">...</td>
+                                <td th:text ="${producto.categoria.nombre}">...</td>
+                                <td>
+                                    <a th:href = "${'/producto/editar/' + producto.id}">Editar</a>
+                                    <a href="#" th:onclick="|eliminarProducto(${producto.id})|">Eliminar</a>
+                                    <!-- <a th:href = "${'/producto/eliminar/' + producto.id}" >Eliminar</a> -->
+                                </td>
+                            </tr>
+                            <tr th:if = "${#lists.isEmpty(productos)}">
+                                <td colspan = "8">No se encontraron registros</td>
+                            </tr>
 
-                </tbody>
-            </table>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
 
         <!-- Modal confirmar eliminar -->
@@ -102,9 +108,9 @@
         </div>
 
         <script src="/jquery-3.6.1.min.js"></script>
-        
+
         <script>
-        function eliminarProducto(id) {
+            function eliminarProducto(id) {
                 //document.getElementById("idAux").value=id;
                 $("#modalConfirmar").modal("show");
                 $("#idAux").val(id);
